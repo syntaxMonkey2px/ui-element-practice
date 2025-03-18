@@ -1,0 +1,656 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio Beta | Lia </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;800&family=Manrope:wght@200;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header id="header">
+
+      <h1>Portfolio</h1>
+    </header>
+                 <!-- -- Element 14 - hamburger menu --  -->
+                 <div class="hamburger-menu burger-fade">
+                  <div class="burger"><img src="main/burger-menu-right-svgrepo-com.svg"></div>
+                  <ul class="burger-list hiddenb">
+                    <li class="burger-items">lorem</li>
+                    <li class="burger-items">ipsum</li>
+                    <li class="burger-items">dolor</li>
+                    <li class="burger-items">sit</li>
+                    <li class="burger-items">amet</li>
+                  </ul>
+                  <script>
+                    var burgerMenu = document.querySelector('.burger-list')
+                    var burgerBtn = document.querySelector('.burger img')
+
+                    var openMenu = function (){
+                     
+                        burgerMenu.classList.toggle("hiddenb");
+                        burgerMenu.style.display = "flex";
+                    }
+                  
+
+                    burgerBtn.addEventListener('mouseenter', openMenu);
+                    burgerMenu.addEventListener('mouseenter', openMenu)
+
+
+
+                    var closeMenu = function () {
+                    
+                      burgerMenu.classList.add('hiddenb');
+                    }
+
+                    burgerBtn.addEventListener('mouseleave', closeMenu);
+                    burgerMenu.addEventListener('mouseleave', closeMenu)
+
+
+                  </script>
+                </div>
+      <div class="with-sidebar">
+        <!-- <section class='sidemenu'>
+          <div class="side-container">
+            <div class="side-pic"><img src="sidemenu/Otter_pic.jpg" alt=""></div>
+            <div class="side-intro"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic similique, molestias, sint in labore quibusdam quo explicabo officiis modi beatae esse quisquam delectus. Excepturi nesciunt distinctio consequatur velit amet necessitatibus suscipit! Maxime dignissimos eveniet voluptatum magnam magni accusantium, voluptates ullam ea deserunt dolores eaque reiciendis aut? Sint id at non dolorum, ea consectetur libero nesciunt eveniet tempore aperiam maxime, aspernatur corrupti, qui atque. Eveniet molestias quia nobis, quidem ipsam eius.</p></div>
+        </section>
+       -->
+
+        <main>
+
+            <!-- ----Element Practice -->
+            <h2>Elements Practice</h2>
+
+                    <section class="element-container">
+
+
+                      <!-- -- Element 13 - grid-item --  -->
+                      <h2>Element 13 - grid-item</h2>
+                      <div class="element-item">
+                        <div class="grid-container">
+                          <div class="grid-item">
+                            <p>1</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>2</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>3</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>4</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>5</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>6</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>7</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>8</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>9</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>10</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>11</p>
+                          </div>
+                          <div class="grid-item">
+                            <p>12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- -- Element 12 - MC question --  -->
+                      <div class="element-item">
+                        <h2>Element 12 - MC question</h2>
+                        <div class="mc-question" tabindex="0">
+                            <h3>Pick one below:</h3>
+                          
+                            <ul>
+                              <li tabindex="1"
+                            class= "mc-answer">press <span class="ans">1</span><br>if you want to press 1</li>
+                              <li tabindex="2" class="mc-answer">press<span class="ans"> 2</span><br>if you want to press 2</li>
+                              <li tabindex="3" class="mc-answer">press<span class="ans"> 3</span><br>if you want to press 3</li>
+                            </ul>
+                            <div class="mc-popup hidden">
+                              <p class="mc-p">Not the</p>
+                            </div>
+                        </div>
+                        <script>
+                        var mcQuestion = document.querySelector('.mc-question')
+                        var mcPopup = document.querySelector(".mc-popup")
+                        var fixedMessage = document.querySelector('.mc-p')
+                        mcQuestion.addEventListener('keydown', function(event){
+                          mcPopup.textContent = fixedMessage.textContent + " " + event.key
+                            if (event.key === "1" || event.key === "2" || event.key === "3"){
+                              mcPopup.classList.remove(".hidden")
+                              mcPopup.style.display = "block"
+                            }
+                          }
+                          );
+                        /* click answer */
+        
+                        function showAnswer () {
+                          var theAns = event.target.querySelector(".ans").textContent
+                              mcPopup.textContent = fixedMessage.textContent + " " + theAns;
+                              mcPopup.classList.remove(".hidden")
+                              mcPopup.style.display = "block"
+                        }
+                        var mcAnswerElement = document.querySelectorAll('.mc-answer');
+                        mcAnswerElement.forEach(function(element){
+                          element.addEventListener('click', showAnswer)
+                        });
+                        // close the popup
+                        mcPopup.addEventListener('mouseenter', function(){
+        
+                          mcPopup.classList.add(".hidden")
+                          mcPopup.style.display = "none"
+                        })
+        
+                        </script>
+                      </div>
+                      <!-- -- Element 11 - change background color by button -->
+                      <div class="element-item">
+                        <h2>Element 11 - Change Color</h2>
+                        <div class="element11">
+                          <div class="bg-color">
+                            <p>Choose a background:</p>
+                            <form action="#" id="bg-color-form">
+                              <label for="red">
+                                <input type="radio" name="bg-color" id="red" value="red">Red
+                              </label>
+                              <label for="yellow">
+                                <input type="radio" name="bg-color" id="yellow" value="yellow">
+                                Yellow
+                              </label>
+                              <label for="green">
+                                <input type="radio" name="bg-color" id="green" value="green">Green
+                              </label>
+                              <label for="default">
+                                <input type="radio" name="bg-color" id="default" value="default">Default
+                              </label>
+                            </form>
+                          </div>
+                          <div class="text-color">
+                            <p>Change text color:</p>
+                            <form action="#" class="text-color-form">
+                              <label for="braun"><input type="radio" name="text-color" id="braun" value="braun">Braun</label>
+                              <label for="verde"><input type="radio" name="text-color" id="verde" value="verde">Verde</label>
+                              <label for="maroon"><input type="radio" name="text-color" id="maroon" value="maroon">maroon</label>
+                              <label for="default"><input type="radio" name="text-color" id="default" value="default">Default</label>
+                            </form>
+                          </div>
+                          <script>
+                            // change font color
+                            var textColorForm = document.querySelector('.text-color-form')
+                            var textColor = document.querySelector('.element11')
+                            textColorForm.addEventListener('change',function(){
+                              var selectedTextColor = document.querySelector('input[name="text-color"]:checked').value;
+                              if(selectedTextColor === "braun"){
+                                textColor.style.color = "var(--braun-color)";
+                                console.log('text braun')
+                              }else if(selectedTextColor === "verde"){
+                                textColor.style.color = "var(--verde-color)";
+                                console.log('text verde')
+                              }else if(selectedTextColor === "maroon"){
+                                textColor.style.color = "var(--maroon-color)";
+                                console.log('text maroon')
+                              }else if(selectedTextColor === "default"){
+                                textColor.style.color = "var(--secondary-light-color)";
+                                console.log('text default')
+                              }
+                              }
+                            )
+                            // change backgroundColor
+                            var bgColorForm = document.getElementById('bg-color-form')
+                            var bgColor = document.querySelector('.element11')
+                            bgColorForm.addEventListener('change', function (){
+                              var selectedColor = document.querySelector('input[name="bg-color"]:checked').value;
+                              if (selectedColor == "red"){
+                                bgColor.style.backgroundColor = "var(--red-color)";
+                                console.log('red')
+                              } else if (selectedColor === "green"){
+                                bgColor.style.backgroundColor = "var(--green-color)";
+                                console.log('green')
+                              } else if (selectedColor === "yellow") {
+                                bgColor.style.backgroundColor = "var(--yellow-color)";
+                                console.log('yellow')
+                              } else if (selectedColor === "default") {
+                                bgColor.style.backgroundColor = "var(----primary-dark-color)";
+                                console.log('default')
+                              }
+                            })
+                          </script>
+                        </div>
+                      </div>
+                      <!-- -- Element 10 - Back to top button -- -->
+                        <button class="top-btn"><a href="#header">top</a></button>
+        
+                      <!-- -- Element 9 - Pop Up Window-->
+                      <div class="element-item">
+                      <h3>Element 9 - Pop Up Window</h3>
+                        <div class="element9">
+                          <div class="overlay hidden"></div>
+                          <button class="button open-btn">Open Something</button>
+                          <div class="modal hidden">
+                            <button class="button-b close-btn">x</button>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, aspernatur.</p>
+                            <button class="button do-btn">Do Something</button>
+                          </div>
+                          <div class="jk-modal hidden">
+                            <p>Nothing to be done actually</p>
+                            <button class="button jk-close-btn">aight</button>
+                          </div>
+                          <div class="jk-modal2 hidden">
+                            <h2>just kidding</h2>
+                          <button class="button jk-close-btn2">close for real</button>
+                          </div>
+                        </div>
+                        <script>
+                          var overlay = document.querySelector('.overlay');
+                          var modal = document.querySelector('.modal');
+                          var openSomethingButton = document.querySelector('.open-btn');
+                          var closeJkButton = document.querySelector('.jk-close-btn')
+                          var doSomething = document.querySelector('.do-btn');
+                          var jk = document.querySelector('.jk-modal');
+                          var jk2 = document.querySelector('.jk-modal2')
+        
+                          // ---- open something -----// working
+                          //click open and open modal
+                          var popUpWindow = function(){
+                            overlay.classList.remove('hidden');
+                            overlay.style.zIndex = "1";
+                            modal.classList.remove('hidden');
+                          }
+                            openSomethingButton.addEventListener('click', popUpWindow);
+                          // ---- Do something ---- //
+                          //click do and open jk
+                          var popUpJk = function(){
+                            jk.classList.remove('hidden')
+                            overlay.style.zIndex = "3";
+                          }
+                            doSomething.addEventListener('click', popUpJk)
+        
+                          // ---- close popup ---- //
+                          //close with do window x
+                          var closeButton = document.querySelector('.close-btn')
+                          var closePopUp = function(){
+                            overlay.classList.add('hidden');
+                            modal.classList.add('hidden');
+                          }
+                            closeButton.addEventListener('click', closePopUp);
+                          // ---- close JK ---- //
+                          // close jk with clicking aight
+                          var closeJk = function(){
+                            overlay.classList.add('hidden');
+                            modal.classList.add('hidden');
+                            jk.classList.add('hidden');
+                          }
+                            closeJkButton.addEventListener('click', closeJk)
+                            // show JK2//
+                          var closeJKAgain = function(){
+        
+        
+                            jk2.classList.remove('hidden');
+                            overlay.style.zIndex = "5";
+                          }
+                          var hideCloseBtn = function(){
+                            closeJkButton.style.display = "none"
+                          }
+                          document.querySelector('.jk-close-btn').addEventListener('mouseenter', function() {
+                            setTimeout(hideCloseBtn, 100);
+                            setTimeout(closeJKAgain, 2000);
+                          });
+                          // close JK2 //
+                          var closeAll = function(){
+                            modal.classList.add('hidden');
+                            jk.classList.add('hidden')
+                            jk2.classList.add('hidden')
+                            overlay.classList.add('hidden')
+                          }
+                          document.querySelector('.jk-close-btn2').addEventListener('click', closeAll)
+        
+                        </script>
+        
+                      </div>
+                      <!-- -- Element 8 - Newsletter Pop Up -->
+                      <div class="element-item">
+                        <h3>Element 8 - Newsletter Pop Up</h2>
+                        <div class="newsletter-popup">
+                          <div class="page-content">
+                            <h1 class="">I am a Heading 1</h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta dolor, aperiam sapiente voluptate dignissimos tempora cum ab in natus cumque autem! Rerum quam numquam repellat deserunt, fugit maxime velit hic autem, voluptatem officiis et.<br><br> Odio excepturi eligendi pariatur necessitatibus sed! Est, quidem porro. Beatae hic recusandae aliquam molestias nobis sed autem nihil quod saepe deleniti distinctio similique minus vitae rerum aperiam optio mollitia, eius natus adipisci dicta, laboriosam doloribus dolor deserunt? Quaerat aliquid explicabo maxime dolore laboriosam, at iusto nihil laudantium repudiandae sed veritatis reiciendis unde officia, ullam blanditiis, tempore impedit. Assumenda iusto saepe doloremque, hic nemo perspiciatis ipsam quo exercitationem autem nam dolores voluptatum inventore sint magnam, sed sit molestiae animi ut facere ducimus, eos suscipit aut! Placeat dolorem deleniti laborum adipisci quasi ratione quidem distinctio, possimus ducimus natus temporibus deserunt, rerum officiis aliquid fugit aliquam id harum labore recusandae minus assumenda! <br><br>
+        
+                            <h2 class="">Why am I a Heading 2</h2>
+                            Maiores ipsum recusandae iure provident tempora quas exercitationem hic suscipit numquam ipsa, perspiciatis explicabo similique nemo neque voluptatibus iste fugit, magnam aut? Exercitationem, eaque. Quo perspiciatis quas enim veritatis fugiat dolore, atque libero incidunt ullam maxime alias quia recusandae perferendis sequi quisquam unde consequatur vitae voluptas laboriosam suscipit, error provident! Praesentium iure ea illo exercitationem officia voluptate, sunt quia! Vitae incidunt natus doloribus laudantium minima animi, non similique unde aliquid corporis vel id itaque, eum nemo maiores libero illo suscipit atque consequuntur optio. Commodi cum iste hic, est modi doloremque suscipit numquam aliquid repellat excepturi ullam harum, neque nihil. Soluta, necessitatibus? Accusantium amet dolorem labore eius dolore voluptate nisi iusto vitae molestiae deserunt ipsam eos, neque voluptas commodi, nesciunt beatae expedita placeat autem at temporibus laborum! Minima, repellat veniam odio rem ipsa ipsam? Temporibus, pariatur delectus? Aspernatur, illo quos harum aut obcaecati consequuntur voluptates dolorum provident at temporibus quaerat officiis, minus officia dolor voluptate qui facilis eveniet dolorem, distinctio similique omnis? Debitis id, voluptatem minus eligendi velit doloremque, laudantium quasi natus iusto assumenda esse non nulla atque cum eveniet perferendis? Distinctio odit corporis illo ducimus voluptate quam facere enim perferendis eligendi, eveniet, debitis id perspiciatis beatae quisquam quo. Dicta ex accusantium non inventore beatae modi, quos illo qui cumque doloribus voluptates aperiam neque quasi vero! Doloribus ad atque architecto inventore beatae autem ab eum ea! Facere sed fugiat explicabo. <br><br>Quis at modi sit facere architecto veritatis illo debitis id et ducimus aut quia optio explicabo, corporis dolor molestiae distinctio repellat tempora delectus numquam.</p>
+                          </div>
+        
+                        </div>
+                        <div class="popup">
+                            <button id="close-popup-btn" class="close-popup-btn">x</button>
+                            <label for="close-popup-btn"></label>
+                            <p>Be the first one to find out our next gig!</p>
+                            <div class="nl popup-body">
+                                <div class="nl-container3">
+                                  <form class="form3" action="#" method="post">
+                                      <label for="email"></label>
+                                      <input type="email" placeholder="Enter your fav email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="This doesn't look like an Email address, bro."/>
+                                      <button id="hero-btn">Subscribe</button id="hero-btn">
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                          document.querySelector('.close-popup-btn').addEventListener('click',
+                          function(){
+                            document.querySelector('.popup').style.display="none";
+                            console.log("but it's working.")
+                          }
+                          )
+                        </script>
+                      </div>
+                      <!-- -- Element 7 - Text Running in Circle -->
+                      <div class="element-item">
+                        <h3>Element 7 - Text Running in Circle</h3>
+                            <div class="circle-box">
+                                <div id="circleText"></div>
+                            </div>
+                              <script>
+                                var text = "Am I spinning? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias.";
+                                var container = document.getElementById('circleText');
+                                for (var i = 0; i < text.length; i++) {
+                                  var letter = document.createElement('span');
+                                  var rotation = 360 * i / text.length;
+                                  letter.style.transform = 'rotate(' + rotation + 'deg)';
+                                  letter.innerHTML = text[i];
+                                  container.appendChild(letter);
+                                }
+                              </script>
+                      </div>
+        
+                      <!-- -- Element 6 - Collection -->
+                      <div class="element-item">
+                        <h3>Element 6 - Collection</h3>
+                        <div class="collection-container">
+                          <div class="collection-item">
+                            <img src="main/collection-1.jpg" alt="mono-blue-abstract">
+                            <div class="collection-text">
+                              <h3>Blue</h3>
+                            </div>
+                          </div>
+                          <div class="collection-item">
+                            <img src="main/collection-2.jpg" alt="color-abstract">
+                            <div class="collection-text">
+                              <h3>Color</h3>
+                            </div>
+                          </div>
+                          <div class="collection-item">
+                            <img src="main/collection-3.jpg" alt="black-white-abstract">
+                            <div class="collection-text">
+                              <h3>Mono</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- -- Element 5 - ToggleList -->
+                      <div class="element-item">
+                        <h3>Element 5 - Night Mode Toggle</h3>
+                          <div class="night-mode-toggle">
+                            <div>
+                            <h4>Method 1 - HTML only</h4>
+                            <input type="checkbox" id="darkMode">
+                            <label for="darkMode">Lights off</label>
+                            <div class="day-mode">
+                              <h4>I am a Title</h4>
+                              <p>I am the important text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut illum, earum quasi unde distinctio alias rem totam a perspiciatis velit deserunt rerum fugit aliquam corporis saepe praesentium asperiores mollitia!
+                              </p>
+                            </div>
+                            <div class="night-mode">
+                              <h4>I am a Title</h4>
+                              <p>I am the important text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut illum, earum quasi unde distinctio alias rem totam a perspiciatis velit deserunt rerum fugit aliquam corporis saepe praesentium asperiores mollitia!
+                              </p>
+                            </div>
+                            <div>
+                              <h4>Method 2 - with script</h4>
+                              <div>
+                                <button class="toggle-button-on" onclick="toggleNightMode()">Lights off</button>
+                                  <div class="day-mode2">
+                                    <h4>I am a Title</h4>
+                                    <p>I am the important text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut illum, earum quasi unde distinctio alias rem totam a perspiciatis velit deserunt rerum fugit aliquam corporis saepe praesentium asperiores mollitia!
+                                    </p>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function toggleNightMode(){
+                          console.log('Function is called');
+                          document.querySelector('.day-mode2').classList.toggle('night-mode2');
+                          document.querySelector('.toggle-button-on').classList.toggle('toggle-button-off');
+                          if (document.querySelector('.day-mode2').classList.contains('night-mode2')){
+                            document.querySelector('.toggle-button-on').textContent  ="Lights on";
+                          }else{
+                            document.querySelector('.toggle-button-on').textContent  ="Lights off";
+                          }
+                        }
+                      </script>
+                      <!-- -- Element 4 - ToggleList -->
+                      <div class="element-item">
+                        <h3>Element 4 - Toggle List</h3>
+                        <div class="toggle-list">
+                          <input type="checkbox" id="toggleList">
+                          <label for="toggleList">Hide Them</label>
+                            <ul class="hidden-list">
+                              <li>Hide me 1</li>
+                              <li>Hide me 2</li>
+                              <li>Hide me 3</li>
+                              <li>Hide me 4</li>
+                            </ul>
+                        </div>
+                      </div>
+                      <!-- -- Element 3 - Newsletter -- -->
+                      <div class="element-item">
+                        <h3>Element 3 - Newsletter</h3>
+                        <div class="newsletter">
+                          <!-- -- newsletter 1 -- -->
+                              <div class="nl nl-container1">
+                                <p>Stay updated with the latest news, events, and exclusive offers by subscribing to our newsletter. Enter your email address below:</p>
+                                <form action="#" method="post">
+                                  <label for="email">(label for texting)</label>
+                                  <input type="email" placeholder="Enter your fav email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="This doesn't look like an Email address, bro."/>
+                                  <button id="hero-btn">Subscribe</button id="hero-btn">
+                                </form>
+                              </div>
+                              <div class="nl nl-container2">
+                                <p>Stay updated with the latest news, events, and exclusive offers by subscribing to our newsletter. Enter your email address below:</p>
+                                <form action="#" method="post">
+                                  <div>
+                                    <label for="email">(label for texting)</label>
+                                  </div>
+                                  <div>
+                                    <input type="email" placeholder="Enter your fav email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$`" oninput="setCustomValidity('')"
+                                    oninvalid="setCustomValidity('This doesn\'t look like an Email address, bro.')" required  />
+                                    <button id="hero-btn">Keep me updated</button id="hero-btn">
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="nl nl-container3">
+                                <div class="nl nl-container3--subcontainer">
+                                  <div class="loop-text">
+                                    <p>Stay updated with the latest news, events, and exclusive offers by subscribing to our newsletter. Enter your email address below:</p>
+                                  </div>
+                                  <div>
+                                    <form class="form3" action="#" method="post">
+                                      <label for="email"></label>
+                                      <input type="email" placeholder="Enter your fav email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="This doesn't look like an Email address, bro."/>
+                                      <button id="hero-btn">Subscribe</button id="hero-btn">
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                      <!-- -- Element 2 - Motion on Scroll -- -->
+                      <div class="element-item">
+                        <h3>Element 2 - Motion on Scroll</h3>
+                          <div class="element2-container">
+                            <div class="element2-container-2">
+                              <!-- ball -->
+                              <div class="element2-object"></div>
+                              <div class="stripe">SZIASZTOK</div>
+                            </div>
+                          </div>
+                      </div>
+                      <!-- -- Element 1 - Motion Text -- -->
+                      <div class="element-item">
+                          <div class="adjust-element1">
+                            <h3>Element 1 - Running Text when Hovering</h3>
+                              <div class="element1-container">
+                                <div class="motion-text--container">
+                                  <div  class="motion-text1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis provident ratione facilis quisquam nesciunt. gitExpedita sequi numquam nisi similique facere? Mollitia repellendus provident molestias atque id labore eos exercitationem architecto nesciunt aliquam voluptatum amet sapiente officia, reiciendis qui dolorum perferendis aperiam tempora, inventore excepturi, vitae accusantium vero earum. Doloremque rerum commodi libero ad nam, maiores ut iste consequuntur similique cupiditate repudiandae voluptatum omnis. Porro deleniti magni quia molestias laborum maiores vero eveniet ratione ipsa, velit veritatis dolore fuga. Dicta harum neque fuga debitis explicabo odio perferendis laborum. Voluptas nemo laudantium cum! Eaque dolorem, quod culpa magni laborum voluptates? Labore, laborum.
+                                  </div>
+                                </div>
+                                <div class="motion-text--container">
+                                  <div  class="motion-text2">
+                                    Perspiciatis provident ratione facilis quisquam nesciunt. Expedita sequi numquam nisi similique facere? Mollitia repellendus provident molestias atque id labore eos exercitationem architecto nesciunt aliquam voluptatum amet sapiente officia, reiciendis qui dolorum perferendis aperiam tempora, inventore excepturi, vitae accusantium vero earum. Doloremque rerum commodi libero ad nam, maiores ut iste consequuntur similique cupiditate repudiandae voluptatum omnis. Porro deleniti magni quia molestias laborum maiores vero eveniet ratione ipsa, velit veritatis dolore fuga. Dicta harum neque fuga debitis explicabo odio perferendis laborum. Voluptas nemo laudantium cum! Eaque dolorem, quod culpa magni laborum voluptates? Labore, laborum.
+                                  </div>
+                                </div>
+                                <div class="motion-text--container">
+                                  <div  class="motion-text3">
+                                    Expedita sequi numquam nisi similique facere? Mollitia repellendus provident molestias atque id labore eos exercitationem architecto nesciunt aliquam voluptatum amet sapiente officia, reiciendis qui dolorum perferendis aperiam tempora, inventore excepturi, vitae accusantium vero earum. Doloremque rerum commodi libero ad nam, maiores ut iste consequuntur similique cupiditate repudiandae voluptatum omnis. Porro deleniti magni quia molestias laborum maiores vero eveniet ratione ipsa, velit veritatis dolore fuga. Dicta harum neque fuga debitis explicabo odio perferendis laborum. Voluptas nemo laudantium cum! Eaque dolorem, quod culpa magni laborum voluptates? Labore, laborum.
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </section>
+            <!-- ----Email Signatures---- -->
+                    <section class="signature">
+                      <h2>Email Signatures</h2>
+                      <button class="hide-email-template">Hide/show Email Templates</button>
+                      <script>
+                        document.querySelector('.hide-email-template').addEventListener('click',
+                        function () {
+                          document.querySelector('.signature-container').classList.toggle('signature-container-hidden');
+                      }
+                        )
+                      </script>
+                        <div class="signature-container">
+                          <!-- SIGNATURE TEMPLATE 1 -->
+                          <div class="signature-item";>
+                            <h3>Email Signature 1</h3>
+                            <table width="600px" height="300px" style="background-color: #f0f0f0; margin-inline:auto">
+                              <tr>
+                                <td style="width:37%; position: relative; vertical-align: top;">
+                                  <div class="layer" style="background-color: rgb(23	35	63); width:55.3%; height:100%; position: absolute ">
+                                  </div>
+                                  <img src="profile 01.png" style="width: 100%; padding: 17.5px; border-radius: 50% ; position: absolute; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">
+                                </td>
+                                <td class="b" style="width:63%; padding:4em; line-height: 0.77;">
+                                  <h2 style="font-family:Georgia, 'Times New Roman', Times, serif; color: rgb(23	35	63)">Jac Dee</h2>
+                                  <h4 style="font-family: 'Times New Roman', Times, serif; color: darkgrey; font-style: italic;">Business Consultant</h4>
+                                  <div class="p" style="line-height: 0.67;">
+                                    <p ><a href="www.your-company.com" style="text-decoration: none; color:rgb(20, 19, 19)">www.your-company.com</a></p>
+                                    <p><a href="tel: +1 800 123 123" style="text-decoration: none; color:rgb(20, 19, 19)">+1 800 123 123</a></p>
+                                    <p><a href="mailto:jac.dee@your-company.com" style="text-decoration: none; color:rgb(20, 16, 16)">jackie.dee@your-company.com</a></p>
+                                  </div>
+                                  <p> Street, City, Zip Code, Country</p>
+                                  <a href=""><img src="linkedin-in.svg" style="width:20.35px; margin-inline:7px" alt=""></a>
+                                  <a href=""><img src="instagram.svg"  style="width:20.35px; margin-inline:7px" alt=""></a>
+                                  <a href=""><img src="youtube.svg" style="width:20.35px; margin-inline:7px" alt=""></a>
+                                  <a href=""><img src="square-facebook.svg"  style="width:20.35px; margin-inline:7px" alt=""></a>
+                                  </tr></td>
+                                  </td>
+                              </tr>
+                            </table>
+                          </div>
+                            <!-- SIGNATURE TEMPLATE 2 -->
+                          <div class="signature-item" id="signature-2" style="min-width: 400px;;">
+                            <h3>Email Signature 2</h3>
+                            <div class="signature-item--2">
+                              <table style="height:300px; min-width: 600px; max-width: 80%;  border-collapse: collapse; border-spacing: 0; background-color: #f0f0f0; margin-inline: auto;">
+                              <tbody>
+                              <tr>
+                                <!-- Picture column -->
+                                  <td style="position: relative; padding:0; margin: 0; border: 0">
+                                        <div style=" position: absolute; z-index: 0; background-color: rgb(57 58 58);width: 100%; ; top: 44%; left: 0px; right: 0px; bottom: 0px; ">
+                                        </div>
+                                        <div style="position: sticky; z-index: 1;">
+                                          <p>
+                                              <a href="https://www.your-company.com/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.your-company.com/&amp;source=gmail&amp;ust=1701769121602000&amp;usg=AOvVaw164Fn2o7QJOiI6CO9lom8t">
+                                                <img alt="Logo" style="width:100%; height: 100%; max-width: 200px; border-radius: 50%; padding: 40px" src="logo 01.png"></a>
+                                          </p>
+                                        </div>
+                                  </td>
+                                  <!-- upper right column -->
+                                    <td style="width:65%; padding:0; margin: 0; border: 0">
+                                        <div style="padding: 20px 57px">
+                                          <div style="font-family:Georgia, 'Times New Roman', Times, serif;color:#333333;font-weight:bold;font-size:23pt;line-height:40pt">Jac Dee</div>
+                                          <div style="font-family:Arial,sans-serif;color:#333333;;line-height:12pt"><br>Sales &amp; Marketing Director</div>
+                                          <p style="margin-bottom:0px;margin-top:0px;padding:0px;FONT-FAMILY:Arial,sans-serif;;line-height:13pt">
+                                              <a href="http://www.your-company.com" style="color:#f5a402;text-decoration:none;font-weight:bold" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.your-company.com&amp;source=gmail&amp;ust=1701769121602000&amp;usg=AOvVaw2q3XOJkqvxEM3usyxvMgPr"><div style="text-decoration:none;;line-height:13pt;color:#f5a402;FONT-FAMILY:Arial,sans-serif;font-weight:bold">www.your-company.com</div></a>
+                                          </p>
+                                          <p style="margin-bottom:0px;margin-top:10px;padding:0px">
+                                              <div><a href="https://www.facebook.com/MyCompany" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/MyCompany&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw0-tVu_pPpgI6F5Ut8RtN4b"><img border="0" width="16" alt="facebook icon" style="border:0;height:16px;width:16px" src="https://ci5.googleusercontent.com/proxy/NGPy7dn7X816BPEwoF-dpL8q5P3J5BnoNAtxpXjHEpl3YWA5bQBNq9yLqOVBfPtmpMsuPhiL7hV4Y9KKnFlTjWeSYzYokxQ-TjkRcUFq2oM1naJ5RY1naKcdjx-QP_pPiA=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/fb.png" class="CToWUd" data-bit="iit"></a>&nbsp;</div><div><a href="https://twitter.com/MyCompany404" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/MyCompany404&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw18fUZJGxXjqw8ggPn3DR_l"><img border="0" width="16" alt="twitter icon" style="border:0;height:16px;width:16px" src="https://ci5.googleusercontent.com/proxy/FmaRandRJyYrtvJkP8954KLEQmgzD0YsU_pdYnL1d0I2gkNnDdzMEL3riF1mCEm9MN-EMQIM8KuXI6VNwJ0H_MWAfep831FgU-w-VnJxM5pA7r4yDKi7sXqU0mEQjLbbcA=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/tt.png" class="CToWUd" data-bit="iit"></a>&nbsp;</div><div><a href="https://www.youtube.com/user/MyCompanyChannel" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.youtube.com/user/MyCompanyChannel&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw2dvoexJuF-P9uoBDPberPu"><img border="0" width="16" alt="youtube icon" style="border:0;height:16px;width:16px" src="https://ci3.googleusercontent.com/proxy/lbYmodNkWO2ipjnGVqSlOiK3SBj8ZjoEaGxfMNL5zF1iVeRJ4jfVmC-R1zT_KKQugvEL14t40Bl9vf8DZt2gDA9OKe1VRdVHNyWPPInHcGAHuUHlpTkd99-oKl2QO2HeYw=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/yt.png" class="CToWUd" data-bit="iit"></a>&nbsp;</div><div><a href="https://www.linkedin.com/company/mycompany404" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/mycompany404&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw3SjKvhyHbQhJ1CjYDk0Vbm"><img border="0" width="16" alt="linkedin icon" style="border:0;height:16px;width:16px" src="https://ci5.googleusercontent.com/proxy/c39uZKpdr61i4scOK3Ld0wPbEYtTjnOJ2kJZSQSE5Lkkj2brT3hV8gnjZG2d_UHyAfAoTMBM_kFTgq2ThnA13f3zbIKmgYW9C9nGoUWVghfGdFGEpIUQwsCMu4_XYCAjEA=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/ln.png" class="CToWUd" data-bit="iit"></a>&nbsp;</div><div><a href="https://www.instagram.com/mycompany404/" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/mycompany404/&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw2fLRirs_PuegXKY1icLH1q"><img border="0" width="16" alt="instagram icon" style="border:0;height:16px;width:16px" src="https://ci5.googleusercontent.com/proxy/18WJM9nAXn2Bm4EGp4A9ISmGSWpUh0UTM-2mU_jGLAPhz-zR4oMi5Se8ypUqZ64vKlh8RSJWw6OOIF5lsPHTDFRUxnKiPIMrQ_g22OhjItmS_5sgFRlsYf5X0ftOd4y5eg=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/it.png" class="CToWUd" data-bit="iit"></a>&nbsp;</div><div><a href="https://pinterest.com/mycompany404/" rel="noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://pinterest.com/mycompany404/&amp;source=gmail&amp;ust=1701769121603000&amp;usg=AOvVaw2kJr7ZT_ULzfbSPOB0i16q"><img border="0" width="16" alt="pinterest icon" style="border:0;height:16px;width:16px" src="https://ci4.googleusercontent.com/proxy/6-ZXTJCv1WUnQRXTCzdMrr0lQDxoXG5TE_l8r739Ezvl0vkt3qz9EDhIwSOxw1cUIlhiOXc-05IgLtyhfVlmiw0Nleiczl2FyNd597_A3cOhmY5OFo-F5miuVQ7aWOwBpQ=s0-d-e1-ft#https://www.mail-signatures.com/signature-generator/img/templates/short/pt.png" class="CToWUd" data-bit="iit"></a></div>
+                                          </p>
+                                        </div>
+                                  <!-- lower right column -->
+                                        <div style="background-color: rgb(57 58 58) ;padding: 20px 57px;border: 0">
+                                            <p style="font-size:11pt; line-height: 25pt; color:#f0f0f0">
+                                                <div style="FONT-FAMILY:Arial,sans-serif;">
+                                                    <div><b>E:</b></div>
+                                                    <a href="mailto:jac.dee@your-company.com" style="text-decoration:none; color: #f0f0f0">jac.dee@your-company.com</div></a>
+                                                    <div><br></div>
+                                                </div>
+                                                <div>
+                                                    <div ><b>M:</b></div>
+                                                    <div> (800) 555-0299</div>
+                                                    <div><br></div>
+                                                </div>
+                                                <div>
+                                                    <div><b>T:</b></div>
+                                                    <div> (800) 555-0199</div>
+                                                    <div><br></div>
+                                                </div>
+                                                <div>
+                                                    <div ><b>A:</b></div>
+                                                    <div> Street, City<div>,</div>
+                                                    <div>Zip Code, Country</div>
+                                                </div>
+                                            </p>
+                                        </div>
+                                    </td>
+                              </tr>
+        
+                              </tbody>
+                              </table>
+                            </div>
+                          </div>
+                            <!-- SIGNATURE TEMPLATE 3 -->
+                          <div class="signature-item">
+                            <h3>Email Signature 3</h3>
+                          </div>
+                        </div>
+                      </section>
+                    <section class="Website">
+                      <h2>Websites</h2>
+                    </section>
+          </div>
+        </main>
+      </div>
+    
+  </body>
+  <footer></footer>
+</html>

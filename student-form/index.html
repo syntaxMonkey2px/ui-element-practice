@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Testing with HTML/CSS</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <div class="row">
+      <div class="student-col">
+        <table id="studentTable">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Score</th>
+          </tr>
+          <!-- Student data will be dynamically added here -->
+        </table>
+      </div>
+      <div class="student-contact-from">
+        <form action="">
+          <h4>Your Name:</h4>
+          <input type="text" class="name" placeholder="How should we call you?">
+          <h4>Your Email:</h4>
+          <input type="text" class="email" placeholder="Let us know how to get back to you.">
+          <h4>Your Comment:</h4>
+          <textarea name="message" cols="30" rows="10" placeholder="What do you want us to know?"></textarea>
+        </form>
+      </div>
+     </div>
+    <div id="resultContainer"></div> 
+    <script src="js/script.js"></script> <!-- should be within <body> -->
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+  }
+  
+  h1 {
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: beige;
+    padding: 30px 0 30px 0;
+    background-color: darkolivegreen;
+
+  }
+  
+  table {
+    width: 80%;
+    margin: auto;
+    border: 1px;
+    color:beige;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    background-color: darkolivegreen;
+
+  }
+  
+  th, td:hover{
+    background-color: grey;
+    transition: 0.03ms;
+
+  }
+
+
+.row{
+  display:flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.student-col{
+  flex-basis: 48%;
+  width: 100%;
+  display: block;
+}
+
+h4{
+  padding: 0;
+}
+
+.student-contact-from{
+  flex-basis: 48%;
+  width: 100%;
+  display: block;
+  background-color: darkolivegreen;
+  padding: 10px ;
+  border-radius: 12px;
+  color: beige;
+  text-align: start;
+}
+input{
+  width: 90%;
+  padding: 10px;
+}
